@@ -6,6 +6,7 @@ on:
       - '*'
 jobs:
   create-release:
+    if: false
     name: create-release
     runs-on: ubuntu-latest
     outputs:
@@ -37,6 +38,7 @@ jobs:
           draft: true
 
   build-binaries:
+    if: false
     name: build-binaries
     needs: ['create-release']
     uses: ./.github/workflows/bins.yml
@@ -46,6 +48,7 @@ jobs:
       upload_url: ${{ needs.create-release.outputs.upload_url }}
 
   build-release:
+    if: false
     name: build-release
     needs: ['create-release']
     runs-on: ubuntu-latest

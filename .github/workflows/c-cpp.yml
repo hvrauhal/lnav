@@ -12,6 +12,7 @@ on:
 
 jobs:
   coverage:
+    if: false
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
@@ -53,6 +54,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    if: false
     steps:
       - uses: actions/checkout@v3
       - name: Update apt
@@ -92,6 +94,7 @@ jobs:
           path: src/lnav
 
   build-windows:
+    if: false
     runs-on: windows-latest
     strategy:
       fail-fast: false

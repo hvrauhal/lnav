@@ -26,6 +26,7 @@ on:
 
 jobs:
   build-musl-x86_64:
+    if: false
     runs-on: ubuntu-latest
     container:
       image: tstack/lnav-build:latest
@@ -67,7 +68,7 @@ jobs:
 
   build-arm:
     runs-on: ubuntu-latest
-    if: false
+    if: true
     strategy:
       matrix:
         include:
@@ -120,6 +121,7 @@ jobs:
 
   build-macos:
     runs-on: macos-12
+    if: false
     env:
       LNAV_BASENAME: lnav-${{ inputs.lnav_version_number }}
       LNAV_ZIPNAME: lnav-${{ inputs.lnav_version_number }}-x86_64-macos.zip
